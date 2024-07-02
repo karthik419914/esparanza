@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.css"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Latest compiled and minified CSS -->
+    <!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ -->
+    <link rel="stylesheet=" href="C:\xampp\htdocs\Esperanza\js.js" />
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <style>
+      
+@media screen and (max-width:500px)
+{
+  .events-header{
+    top: 0;
+    margin-bottom: 60%;
+    margin-right: 50%;
+    margin-left: -20%;
+    
+  }
+  .events-container{
+    width: 100%;
+    height: 100%;
+  }
+  .card{
+    padding-left: 20rem;
+  }
+
+  .navbar{
+    height: 13vh
+  }
+  /* write your media query here divyanshiii xD*/
+} 
+.cards {
+                        display: flex;
+
+                        /* Put a card in the next row when previous cards take all width */
+                        flex-wrap: wrap;
+
+                        margin-left: 0%;
+                        margin-right: -2%;
+                    }
+
+                    .cards-item {
+                        /* There will be 4 cards per row */
+                        flex-basis: 10%;
+
+                        padding-left: 8px;
+                        padding-right: 8px;
+                    }
+
+    
+html {
+  scroll-behavior: smooth;
+}
+
+      body {
+        scroll-behavior: auto;
+        font-family: 'Josefin Sans', sans-serif;  
+        background: linear-gradient(135deg, #f53eff 0%,#7367F0 100%);
+        width: 100%;
+        /* height: 1100px; */
+      }
+      .dropdown {
+          position: center;
+          /* display: inline-block; */
+          float: left;
+          clear:left;
+
+      }
+      .cards-item:hover
+      {
+          box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+          transform: translate3d(0px, -1px, 0px);
+          padding: auto;
+
+      }
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f1f1f1;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.responsiveImage {
+  width: 100%;
+  height: auto;
+}
+
+
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+      .events-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        /* margin: auto; */
+        height: 100vh;
+        
+      }
+      #image {
+        width: 20vh;
+        height: 20vh;
+      }
+
+      .cards-item{
+        padding: 10px;
+        justify-content:center;
+        height: 100%;  
+        width: 100%;
+        float:center;
+      }
+      .text{
+        align-items: center;
+        padding-right: 97rem;
+        font-size: 1.99rem;
+      }
+    </style>
+    <title>Esperanza 2K22</title>
+  </head>
+
+  <body>
+    <div id="spinner">
+      <img src="assets/images/esperanzalogo.jpg"/>
+    </div>
+
+    <!-- Navbar starts here -->
+    <nav
+      class="navbar"
+      id="navbar"
+      role="navigation"
+      aria-label="main navigation"
+      style="background-color: black !important"
+    >
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+          <!-- logo goes here -->
+
+          <h2
+            class="title is-2 esp_logo"
+            style="text-align: right; line-height: 23px; font-weight: 800"
+          >
+            esperanza<br /><span style="padding: 0" class="title is-4 esp_2k22"
+              >2k22</span
+            >
+          </h2>
+        </a>
+
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="true"
+          data-target="navbarBasicExample"
+        >
+          <span
+            style="background-color: white; height: 2px; width: 22px"
+            aria-hidden="true"
+          ></span>
+          <span
+            style="background-color: white; height: 2px; width: 15px"
+            aria-hidden="true"
+          ></span>
+          <span
+            style="background-color: white; height: 2px; width: 22px"
+            aria-hidden="true"
+          ></span>
+        </a>
+      </div>
+      &emsp; &emsp;
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="index.html#aboutUs"> About Us </a>
+
+          <!-- <a class="navbar-item" href="index.html#sponsors"> Sponsors </a> -->
+
+          <a class="navbar-item" href="index.html#Archives"> Archives </a>
+
+          <a class="navbar-item" href="events.html"> Events & Competitions </a>
+          <a
+            class="navbar-item"
+            style="
+              background: -webkit-linear-gradient(#d9ff00, #c5dd28);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            
+            
+          -webkit-text-fill-color: transparent;" href="https://docs.google.com/forms/d/e/1FAIpQLSevutVI3NfyfSnP9iEwKvBPRk2XJsbPCN8GOFcvA5Y8T_Zt6A/viewform"
+          >
+            Register for Musical Night!
+          </a>
+        </div>
+        <div class="navbar-end is-desktop">
+          <img
+            class="dsatm_logo"
+            style="width: 100%; object-fit: contain"
+            src="assets/images/dsatm_logo.png"
+          />
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar ends here -->
+    <!-- Events -->
+    </div>
+    <div class="events-header" style = "position: relative; left: 33%;">
+      <h1 style="font-size: 3rem; color: aliceblue;padding-top: 20vh; margin-bottom: -30vh;">&nbsp;&nbsp;&nbsp;Events Categories</p>
+    </div>
+
+    <div class="events-container">
+      <div class="cards">
+        <div class="dropdown" >
+        <div class="cards-item" onclick="location.href='event-desc.html';" style="cursor: pointer;">
+            <!-- <img src="/assets/images/categories/art.png" style="float: left;" id="image" />   -->
+            <img src="assets/images/categories/art.png" id="image"/>          
+              <!-- <p  style="margin-left: 2rem;font-size: 1.99rem;color: aliceblue;">Art</p> -->
+                <p  style="font-size: 1.99rem;color: aliceblue;" href="event-desc.html">&nbsp;Crafting&nbsp;</p>
+                <!-- <div class="dropdown-content">
+                  <a href="event-desc.html">50 shades of Art</a>
+                  <hr class="line1" style="height: 0.5px; color: #808080">
+                  <a href="event-desc.html">Off the brush!</a>
+                  <hr class="line1" style="height: 0.5px; color: #808080">
+                  <a href="event-desc.html">Face Off</a> -->
+          <!-- </div>      -->
+        </div>
+      </div>
+      <div class="dropdown">    
+      <div class="cards-item" onclick="location.href='event-desc.html';" style="cursor: pointer;">
+          <img src="assets/images/categories/cooking.png" id="image" />
+          <p style="font-size: 1.99rem;color: aliceblue;" href="event-desc.html">&nbsp;Culinary&nbsp;</p>
+          <!-- <div class="dropdown-content">
+            <a href="#">Aao Khao Jao!</a>
+            <hr class="line1" style="height: 0.5px; color: #808080">
+            <a href="#">Ditch the Fire</a>
+          </div> -->
+        </a>
+      </div>
+      </div>
+      <div class="dropdown">
+      <div class="cards-item" onclick="location.href='event-desc.html';" style="cursor: pointer;">
+          <img src="assets/images/categories/cultural.png" id="image" />
+          <p style="font-size: 1.99rem;color: aliceblue;" href="event-desc.html">&nbsp;Cultural&nbsp;</p>
+          <!-- <div class="dropdown-content">
+            <a href="event-desc.html">Feet on Fire</a>
+            <hr class="line1" style="height: 0.5px; color: #808080">
+
+            <a href="event-desc.html">Pakka Local</a>
+            <hr class="line1" style="height: 0.5px; color: #808080">
+
+            <a href="event-desc.html">Bandish Bandit</a>
+            <hr class="line1" style="height: 0.5px; color: #808080">
+
+            <a href="event-desc.html">Fastest feet first</a>
+            <hr class="line1" style="height: 0.5px; color: #808080">
+
+            <a href="event-desc.html">Beyond the Ragas</a>
+            <hr class="line1" style="height: 0.5px; color: #808080">
+
+            <a href="event-desc.html">Battle of Bands</a>
+            <hr class="line1" style="height: 0.5px; color: #808080">
+
+            <a href="event-desc.html">Boots and Cats</a>
+            <hr class="line1" style="height: 0.5px; color: #808080">
+
+            <a href="event-desc.html">Instrumental</a>
+            <hr class="line1" style="height: 0.5px; color: #808080">
+
+            <a href="event-desc.html">Nataram</a>
+            <hr class="line1" style="height: 0.5px; color: #808080">
+
+            <a href="event-desc.html">Lights, Camera, whatever...</a>
+            <hr class="line1" style="height: 0.5px; color: #808080">
+
+            <a href="event-desc.html">Rampwalk</a>
+            <hr class="line1" style="height: 0.5px; color: #808080">
+
+            <a href="event-desc.html">Set the trend</a>
+
+          </div> -->
+        </a>
+      </div>
+      </div>
+      <div class="dropdown">
+      <div class="cards-item" onclick="location.href='event-desc.html';" style="cursor: pointer;">
+      
+          <img src="assets/images/categories/literature.png" id="image" />
+          <p style="font-size: 1.99rem;color: aliceblue;" href="event-desc.html">&nbsp;Literary&nbsp;</p>
+          <!-- <div class="dropdown-content">
+            <a href="event-desc.html">Debate</a>
+            <hr class="line1" style="height: 0.5px; color: #808080">
+
+            <a href="event-desc.html">Pursuit the dispute</a>
+
+          </div> -->
+        </a>
+      </div>
+      </div>
+      <br />
+      <div class="dropdown">
+      <div class="cards-item" onclick="location.href='event-desc.html';" style="cursor: pointer;">
+          <img src="assets/images/categories/recreational.png" id="image" />
+          <p style="font-size: 1.99rem;color: aliceblue;" >&nbsp;Gaming&nbsp;</p>
+          <!-- <div class="dropdown-content">
+            <a href="event-desc.html">Battle of Radiants</a>
+            <hr class="line1" style="height: 0.5px; color: #808080">
+
+            <a href="event-desc.html">COD Mobile</a>
+            <hr class="line1" style="height: 0.5px; color: #808080">
+
+            <a href="event-desc.html">Kolioota</a>
+          </div> -->
+        </a>
+      </div>
+      </div>
+      <div class="dropdown">
+      <div class="cards-item" onclick="location.href='event-desc.html';" style="cursor: pointer;">
+        
+          <img src="assets/images/categories/technical.png" id="image" />
+          <p style="font-size: 1.99rem;color: aliceblue;">&nbsp;&nbsp;Techno&nbsp;&nbsp;&nbsp;</p>
+          <!-- <div class="dropdown-content">
+            <a href="event-desc.html">Hackathon</a>
+             <hr class="line1" style="height: 0.5px; color: #808080"> 
+          </div> -->
+        </a>
+        
+      </div>
+      </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    //Get the button:
+    mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+      scrollFunction();
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").style.top = "-10vh";
+      }
+      prevScrollpos = currentScrollPos;
+    };
+
+    $("#baa_guru").attr("title", "Click to Translate!");
+
+    $(document).ready(function () {
+      // Check for click events on the navbar burger icon
+      $(".navbar-burger").click(function () {
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        $(".navbar-burger").toggleClass("is-active");
+        $(".navbar-menu").toggleClass("is-active");
+      });
+
+      $(".navbar-item").click(function () {
+        $(".navbar-burger").toggleClass("is-active");
+        $(".navbar-menu").toggleClass("is-active");
+      });
+    });
+    // The data/time we want to countdown to
+    var countDownDate = new Date("June 24, 2022 00:00:00").getTime();
+
+    // Run myfunc every second
+    var myfunc = setInterval(function () {
+      var now = new Date().getTime();
+      var timeleft = countDownDate - now;
+
+      // Calculating the days, hours, minutes and seconds left
+      var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+      var hours = Math.floor(
+        (timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+      // Result is output to the specific element
+      document.getElementById("days").innerHTML = days + "d ";
+      document.getElementById("hours").innerHTML = hours + "h ";
+      document.getElementById("mins").innerHTML = minutes + "m ";
+      document.getElementById("secs").innerHTML = seconds + "s ";
+
+      // Display the message when countdown is over
+      if (timeleft < 0) {
+        clearInterval(myfunc);
+        document.getElementById("days").innerHTML = "";
+        document.getElementById("hours").innerHTML = "";
+        document.getElementById("mins").innerHTML = "";
+        document.getElementById("secs").innerHTML = "";
+        document.getElementById("end").innerHTML = "LET'S GOOOOOO 🚀!!";
+      }
+    }, 1000);
+
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    };
+
+    // (A) SHOW & HIDE SPINNER
+    function show() {
+      document.getElementById("spinner").classList.add("show");
+    }
+    function hide() {
+      document.getElementById("spinner").classList.remove("show");
+    }
+
+    $(window).load(function () {
+      $("#spinner").fadeOut("slow");
+    });
+
+    /*
+      $('#baa_guru')
+      .data('textToggle', 'Translate!')
+      .hover(function (e) {
+          var that = $(this);
+  
+          // get the text from data attribute
+          var textToSet = that.data('textToggle');
+  
+          // save the current text so it can be reverted
+          that.data('textToggle', that.text());
+  
+          // set the new text
+          that.text(textToSet);
+      }, function (e) {
+          var that = $(this);
+  
+          // get the text from data attribute
+          var textToSet = that.data('textToggle');
+  
+          // save the current text so it can be reverted
+          that.data('textToggle', that.text());
+  
+          // set the new text
+          that.text(textToSet);
+      }); */
+    </script>
+</html>
